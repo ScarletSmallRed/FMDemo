@@ -13,6 +13,7 @@
 		CA0E55F81E00E86D00608BAE /* FMDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CA0E55F61E00E86D00608BAE /* FMDemo.xcdatamodeld */; };
 		CA0E55FA1E00E86D00608BAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA0E55F91E00E86D00608BAE /* Assets.xcassets */; };
 		CA0E55FD1E00E86D00608BAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA0E55FB1E00E86D00608BAE /* LaunchScreen.storyboard */; };
+		CA2D9B371E022659003C9A5F /* EkoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2D9B361E022659003C9A5F /* EkoImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		CA0E55F91E00E86D00608BAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA0E55FC1E00E86D00608BAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA0E55FE1E00E86D00608BAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA2D9B361E022659003C9A5F /* EkoImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EkoImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				CA0E55EF1E00E86D00608BAE /* AppDelegate.swift */,
-				CA0E55F11E00E86D00608BAE /* ViewController.swift */,
 				CA0E55F31E00E86D00608BAE /* Main.storyboard */,
+				CA0E55F11E00E86D00608BAE /* ViewController.swift */,
+				CA2D9B361E022659003C9A5F /* EkoImage.swift */,
 				CA0E55F91E00E86D00608BAE /* Assets.xcassets */,
 				CA0E55FB1E00E86D00608BAE /* LaunchScreen.storyboard */,
 				CA0E55FE1E00E86D00608BAE /* Info.plist */,
@@ -143,6 +146,7 @@
 				CA0E55F81E00E86D00608BAE /* FMDemo.xcdatamodeld in Sources */,
 				CA0E55F21E00E86D00608BAE /* ViewController.swift in Sources */,
 				CA0E55F01E00E86D00608BAE /* AppDelegate.swift in Sources */,
+				CA2D9B371E022659003C9A5F /* EkoImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +310,7 @@
 				CA0E56031E00E86D00608BAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

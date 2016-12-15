@@ -9,10 +9,19 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var iv: EkoImage!
+    @IBOutlet weak var bg: EkoImage!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        iv.onRotation()
+        bg.blurImage()
     }
 
     override func didReceiveMemoryWarning() {
