@@ -42,9 +42,8 @@ class EkoImage: UIImageView {
     }
     
     func blurImage() {
-        let blurEffect = UIBlurEffect(style: .light)
-        let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.frame = (superview?.frame)!
+        let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+        blurView.frame = superview!.frame
         self.addSubview(blurView)
     }
 }
