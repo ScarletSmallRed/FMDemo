@@ -30,7 +30,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         httpController.delegate = self
         
         httpController.onSearch("http://www.douban.com/j/app/radio/channels")
-        httpController.onSearch("http://douban.fm/j/mine/playlist?type=n&channel=1&from=mainsite")
+        httpController.onSearch("https://douban.fm/j/mine/playlist?type=n&channel=100&from=mainsite")
     }
     
     override func viewWillAppear(_ animated: Bool) {
