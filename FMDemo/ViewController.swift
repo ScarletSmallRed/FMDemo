@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 import Alamofire
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, HTTPProtocol {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, HTTPProtocol, ChannelProtocol {
     
     @IBOutlet weak var iv: EkoImage!
     @IBOutlet weak var bg: EkoImage!
@@ -68,6 +68,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        var channelTC: ChannelTableViewController = segue.destination as! ChannelTableViewController
+        channelTC.delegate = self
+        channelTC.channelData = self.channelData
+    }
+    
     
     // MARK: - HTTP protocol
     
@@ -79,12 +90,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if let channels = json["channels"].array {
             self.channelData = channels
             print("channels: \(channels)")
+            print("length: \(channels.count)")
         } else if let songs = json["song"].array {
             self.songData = songs
             print("songs: \(songs)")
             print("length: \(songs.count)")
             self.tv.reloadData()
         }
+    }
+    
+    // MARK: - Channle protocol
+    func onChangeChannel(channelID: String) {
+        let url: String = "https://douban.fm/j/mine/playlist?type=n&channel=\(channelID)&from=mainsite"
+        httpController.onSearch(url)
     }
 }
 

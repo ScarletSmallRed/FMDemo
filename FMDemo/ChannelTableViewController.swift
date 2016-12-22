@@ -7,12 +7,24 @@
 //
 
 import UIKit
+import SwiftyJSON
+
+protocol ChannelProtocol {
+    func onChangeChannel(channelID: String)
+}
 
 class ChannelTableViewController: UITableViewController {
+    
+    var delegate: ChannelProtocol?
+    
+    var channelData: [JSON] = []
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("\n\n")
+        print(channelData)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -27,16 +39,17 @@ class ChannelTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+    /*
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0
     }
+    */
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 10
+        return channelData.count
     }
     
     
@@ -44,7 +57,13 @@ class ChannelTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChannelCell", for: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = "Channel: \(indexPath.row)"
+        
+        print("Hello, world!")
+        
+        let rowData: JSON = self.channelData[indexPath.row] as JSON
+        print("\n\n")
+        print(rowData)
+        cell.textLabel?.text = rowData["name"].string
 
         return cell
     }
