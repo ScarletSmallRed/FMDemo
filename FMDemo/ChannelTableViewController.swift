@@ -103,6 +103,16 @@ class ChannelTableViewController: UITableViewController {
         return true
     }
     */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let rowData: JSON = channelData[indexPath.row] as JSON
+        
+        let channelID: String = rowData["channel_id"].stringValue
+        
+        delegate?.onChangeChannel(channelID: channelID)
+        
+        self.dismiss(animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation
